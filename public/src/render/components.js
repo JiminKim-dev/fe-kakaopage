@@ -7,7 +7,7 @@ import makeRankingList from '../components/container/rankingList.js'
 import makeSelectDayDaily from '../components/selectDay/selectDayDaily.js'
 import { makeWebtoonList } from '../components/webtoonList.js'
 
-import {getData} from '../utility.js'
+import {getData, getToday} from '../utility.js'
 
 function renderMainBanner(tab) {
   const router = 'main-banner';
@@ -34,10 +34,8 @@ function renderSelectDayDaily() {
   const router = 'daily-top';
   return getData(router)
     .then(json => {
-      const today = new Date().getDay();
-      const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
-      return json[day[today]];
+      const today = getToday();
+      return json[today];
     })
     .then(data => makeSelectDayDaily(data));
 }
@@ -64,10 +62,8 @@ function renderSelectDayHome(num) {
   const router = 'daily-top';
   return getData(router)
     .then(json => {
-      const today = new Date().getDay();
-      const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
-      return json[day[today]];
+      const today = getToday();
+      return json[today];
     })
     .then(data => makeSelectDayHome(num, data));
 }

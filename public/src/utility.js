@@ -6,4 +6,11 @@ const getData = (router) =>  {
   .then(res => res.json());
 }
 
-export {$, $all, getData}
+const getToday = () => {
+  const today = new Date().getDay();
+  const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+  return day[today];
+}
+
+export {$, $all, getData, getToday}

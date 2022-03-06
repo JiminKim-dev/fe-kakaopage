@@ -1,7 +1,7 @@
 import {renderHome, renderDaily, renderWebtoon, renderBoy} from './render/pages.js';
 import {makeWebtoonItems} from './components/webtoonList.js';
 import Slider from './slider.js';
-import {$, $all, getData} from './utility.js';
+import {$, $all, getData, getToday} from './utility.js';
 
 let slider = null;
 
@@ -12,8 +12,7 @@ const setSlide = () => {
 }
 
 const todayFocus = () => {
-  const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  const today = new Date().getDay();
+  const today = getToday();
   const selectDay = document.querySelectorAll('.select__day .day');
   selectDay.forEach(el => {
     if (el.dataset.day === day[today]) el.classList.add('day--focused');
