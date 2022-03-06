@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
-const mainBanner = JSON.parse(fs.readFileSync('./data/mainBannerData.json', 'utf-8'));
-const promotionBanner = JSON.parse(fs.readFileSync('./data/promotionBannerData.json', 'utf-8'));
-const themeMenu = JSON.parse(fs.readFileSync('./data/themeMenuData.json', 'utf-8'));
-const dailyTop = JSON.parse(fs.readFileSync('./data/dailyTopData.json', 'utf-8'));
-const dailyRanking = JSON.parse(fs.readFileSync('./data/dailyRanking.json', 'utf-8'));
-const homeGenreTop = JSON.parse(fs.readFileSync('./data/homeGenreTopData.json', 'utf-8'));
+const mainBanner = require('../data/mainBannerData');
+const promotionBanner = require('../data/promotionBannerData');
+const themeMenu = require('../data/themeMenuData.json');
+const dailyTop = require('../data/dailyTopData.json');
+const dailyRanking = require('../data/dailyRanking.json');
+const homeGenreTop = require('../data/homeGenreTopData.json');
 
 router.get('/main-banner', function(req, res, next) {
   res.json(mainBanner);
