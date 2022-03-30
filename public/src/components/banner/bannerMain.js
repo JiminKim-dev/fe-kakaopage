@@ -17,7 +17,7 @@ export default function makeMainBanner(data) {
 function makeMainBannerItem(item, index) {
   return `
     <li class="banner__item" data-index="${index + 1}">
-      <a href="#"><img src="${item.img_url}" alt="${item.img_alt}" class="banner__img"/></a>
+      <a href="#"><img src="${item.img_url}" alt="${item.img_alt}" class="banner__img" loading="lazy"/></a>
       <div class="banner__info">
         <h3 class="banner__title">${item.title}</h3>
         <div class="banner__viewer">

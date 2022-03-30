@@ -14,7 +14,7 @@ function makeWebtoonItems(num, data) {
     <li class="webtoons__item">
       <div class="item__privew">
         <div class="item__img">
-          <img src=${data[i].img_url} alt="${data[i].img_alt}"/>
+          <img src=${data[i].img_url} alt="${data[i].img_alt}" loading="lazy"/>
         </div>
         <div class="item__rating">
           <div class="rating-star">
