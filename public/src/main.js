@@ -15,7 +15,7 @@ const todayFocus = () => {
   const today = getToday();
   const selectDay = document.querySelectorAll('.select__day .day');
   selectDay.forEach(el => {
-    if (el.dataset.day === day[today]) el.classList.add('day--focused');
+    if (el.dataset.day === today) el.classList.add('day--focused');
   });
 }
 
